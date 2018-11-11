@@ -7,7 +7,9 @@ if [ "$#" -ne 3 ]
 	echo "Syntax: TiMac [hours] [minutes] [seconds]"
     else
 	wifi = ip r show | grep " src " | cut -d " " -f 3,12
+  sudo ifconfig $wifi down
 	sudo macchanger --random $wifi
-	echo "Next MAC-Adress is genereated in ($1):($2):($3)"	
+  sudo ifconfig $wifi up
+	echo "Next MAC-Adress is genereated in ($1):($2):($3)"
 	sudo macchanger --random $wifi | at now + $1 hours + $2 minutes + $3 seconds
 fi
