@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TITLE="TiMac - A Time based MAC-Adress Changer"
+
+if [ "$#" -ne 3 ]
+    then
+	echo "Syntax: TiMac [hours] [minutes] [seconds]"
+    else
+	wifi = ip r show | grep " src " | cut -d " " -f 3,12
+	sudo macchanger --random $wifi
+	echo "Next MAC-Adress is genereated in ($1):($2):($3)"	
+	sudo macchanger --random $wifi | at now + $1 hours + $2 minutes + $3 seconds
+fi

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+TITLE="m_custom_ap - Create a fast and simple Access-Pointp"
+
+if [ "$#" -ne 2 ]
+ then
+    echo "Syntax: m_custom_ap [WIFI_NAME] [PASSWORD]\n"
+    echo "\t Example: m_custom_ap HeisserPunkt 3133731337\n"
+ else
+    sudo create_ap --isolate-clients -w 2 wlp3s0 enp2s0f1 $1 $2
+    echo "Created Hotpsot with $1 $2"
+fi

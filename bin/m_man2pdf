@@ -1,0 +1,22 @@
+#!/bin/bash
+
+TITLE="m_man2pdf - Convert man-page to pdf"
+
+if [ "$#" -ne 2 ]
+  then
+ 	  echo "Syntax: m_man2pdf [manPage] [OutputFileName]"
+    exit
+  else
+  	man -t $1 | ps2pdf - $2.pdf
+
+  	printf "Created $2.pdf. Open? (y/n): "
+  	read confirm
+
+  	if [$confirm = "y"]
+  	  then
+    		xdg-open $2.pdf
+    		exit
+    	else
+  		  exit
+  	fi
+fi
