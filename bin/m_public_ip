@@ -1,0 +1,7 @@
+#!/bin/bash
+
+TITLE="Public IP Adress"
+
+printf "Start gathering public IPv4 ..."
+echo "Your public IPv4 adress is: \n"
+curl ifconfig.me
