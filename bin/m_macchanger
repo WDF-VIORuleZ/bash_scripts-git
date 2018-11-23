@@ -9,6 +9,7 @@ if [[ $UID != 0 ]]; then
     if [ "$#" -ne 3 ]
         then
     	    echo "Syntax: TiMac [hours] [minutes] [seconds]"
+          echo "(Now works for WIFI and LAN)"
           exit 1
         else
           echo "[OK] Starting TiMAC ..."
@@ -17,21 +18,18 @@ if [[ $UID != 0 ]]; then
           if [ ! -z $wifi]; then
             while true
             do
-              time = 'echo "$1+$2*60+$3*360" | bc'
-              echo time
-              sleep time
-
               clear
-              printf "[OK] Wifi Interface: $wifi\n"
+              printf '=%.0s' {1..42}
+              printf "\n[OK] Wifi Interface: $wifi\n"
               sudo ifconfig $wifi down
               printf "[OK] $wifi down\n"
             	sudo macchanger --random $wifi
               sudo ifconfig $wifi up
               printf "[OK] $wifi up\n"
-              # time in seconds
-              time = 'echo "$1+$2*60+$3*360" | bc'
+              printf '=%.0s' {1..42}
 
-              sleep time
+              sleep $1h && sleep $2m && sleep $3
+
             done
             #TODO Implement crontab
           	#echo "[INFO] Next MAC-Adress is genereated in ($1):($2):($3)"
