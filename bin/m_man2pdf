@@ -12,10 +12,8 @@ if [ "$#" -ne 2 ]
   	printf "Created $2.pdf. Open? (y/n): "
   	read confirm
 
-  	if [$confirm = "y"]
-  	  then
-    		xdg-open $2.pdf
-    		exit
+  	if [ $confirm="y" ];then
+    		xdg-open "$2".pdf
     	else
   		  exit
   	fi
