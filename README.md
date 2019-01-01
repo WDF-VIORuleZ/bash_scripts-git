@@ -11,7 +11,7 @@ Just some scripts for my daily use I backup on Github :)
 * [install.sh] 
 * [WARN] m_chromium_tor
 * [OK] m_tor
-* [OK] m_custom_ap      	
+* [OK](EXT)[https://github.com/oblique/create_ap]m_custom_ap	
 * [OK] m_macchanger     
 * [OK] m_man2pdf	   
 * [OK] m_pwd_gen	   	
@@ -26,6 +26,9 @@ Just some scripts for my daily use I backup on Github :)
 * curl
 * tor
 
+## Installation
+---
+Arch
 ```
 sudo pacman -S xdg-utils macchanger create_ap curl tor
 ```
