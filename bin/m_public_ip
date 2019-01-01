@@ -2,6 +2,12 @@
 
 TITLE="Public IP Adress"
 
-printf "Start gathering public IPv4 ..."
-echo "Your public IPv4 adress is: \n"
-curl ifconfig.me
+printf "Start gathering public IPv4 ...\n"
+$result = curl ifconfig.me 2>/dev/null | strings
+
+if [ -n $result]
+  then
+    echo "[OK] Your public IPv4 address is: $result"
+else 
+    echo "[ERR] Error getting IPv4" 
+fi 

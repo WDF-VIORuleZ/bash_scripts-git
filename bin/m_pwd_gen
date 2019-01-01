@@ -3,7 +3,7 @@
 TITLE="m_ped_gen"
 if [ "$#" -ne 1 ]
  then
-    echo "Usage: m_pwd_gen [PWLEN]"
+    echo "Usage: m_pwd_gen [LEN]"
   else
     < /dev/urandom tr -dc A-Za-z0-9_ | head -c$1
 fi

@@ -3,7 +3,7 @@
 TITLE="TiMac - A Time based MAC-Adress Changer"
 
 if [[ $UID != 0 ]]; then
-    echo "Please run this script with sudo:"
+    echo "Please run this script as root"
     exit 1
   else
     if [ "$#" -ne 3 ]
@@ -12,7 +12,7 @@ if [[ $UID != 0 ]]; then
           echo "(Now works for WIFI and LAN)"
           exit 1
         else
-          echo "[OK] Starting TiMAC ..."
+          echo "\e[32m[OK]\e[0m Starting TiMAC ..."
           #str="macchanger --random $wifi"
         	wifi=$(ip r show | grep " src " | cut -d " " -f 3,12)
           if [ ! -z $wifi]; then
@@ -20,12 +20,12 @@ if [[ $UID != 0 ]]; then
             do
               clear
               printf '=%.0s' {1..42}
-              printf "\n[OK] Wifi Interface: $wifi\n"
+              printf "\n\e[32m[OK]\e[0m Wifi Interface: $wifi\n"
               sudo ifconfig $wifi down
-              printf "[OK] $wifi down\n"
+              printf "\e[32m[OK]\e[0m $wifi down\n"
             	sudo macchanger --random $wifi
               sudo ifconfig $wifi up
-              printf "[OK] $wifi up\n"
+              printf "\e[32m[OK]\e[0m $wifi up\n"
               printf '=%.0s' {1..42}
 
               sleep $1h && sleep $2m && sleep $3
@@ -34,7 +34,7 @@ if [[ $UID != 0 ]]; then
             #TODO Implement crontab
           	#echo "[INFO] Next MAC-Adress is genereated in ($1):($2):($3)"
           else
-            printf "[ERR] Did not get wifi-interface. Mission abort"
+            printf "\e[91m[WARN]\e[0m Did not get wifi-interface. Mission abort"
             exit -1
           fi
      fi

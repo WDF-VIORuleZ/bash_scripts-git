@@ -1,0 +1,7 @@
+#!/bin/bash
+clear
+echo -e "\e[32m[OK]\e[0m   Starting TOR on 127.0.0.1:9050 ..."
+sudo -u tor /usr/bin/tor
+echo -e "\e[91m[WARN]\e[0m Stopped Tor"
+sleep 2s
+clear
