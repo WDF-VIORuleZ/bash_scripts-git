@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ $# -eq 1 ]] ; then
+    grep __NR_$1 /usr/include/asm/unistd_32.h
+else
+    echo -e "[-] Did not get Syscall number"
+    exit 1
+fi
