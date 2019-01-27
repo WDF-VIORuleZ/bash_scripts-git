@@ -16,6 +16,7 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_man2pdf	   
 * [OK] m_pwd_gen	   	
 * [OK] m_speed_dev_0    
+* [OK] m_syscall
 
 #### Required Software Packages
 
