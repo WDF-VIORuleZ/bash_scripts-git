@@ -17,6 +17,7 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_pwd_gen	   	
 * [OK] m_speed_dev_0    
 * [OK] m_syscall
+* [OK] m_epub2pdf_dir
 
 #### Required Software Packages
 
@@ -26,10 +27,11 @@ Just some scripts for my daily use I backup on Github :)
 * create_ap
 * curl
 * tor
+* ebook-convert (package: calibre)
 
 ## Installation
 ---
 Arch
 ```
-sudo pacman -S xdg-utils macchanger create_ap curl tor
+sudo pacman -S curl tor xdg-utils macchanger create_ap calibre
 ```
