@@ -1,0 +1,36 @@
+#!/bin/bash
+
+RED='\033[0;31m'
+GRN='\033[0;32m'
+NOC='\033[0m'
+
+total_files=0
+declare -g files
+
+for ext in epub;do
+    files=(*."$ext")
+    printf '%s files: %d\n' "$ext" "${#files[@]}"
+    total_files+=${#files[@]}
+done
+
+# file_num=$(ls -1 | grep -r -i *.$extension | wc -l)
+
+
+
+if [ $total_files -gt 0 ];then
+    #echo "Found $(for ext in "${extensions}"; do echo $ext ; done) :"
+    for file in *.epub;do
+        printf "  ${RED}[*]${NOC} $file \n"
+    done
+
+    # Conversion
+    for file in "${files[@]}";do
+        ebook-convert "$file" "${file:(-3)}".pdf
+    done
+
+
+else 
+    printf "  ${RED}[-]${NOC} Did not find a file to convert\n"
+    exit -1
+fi
+
