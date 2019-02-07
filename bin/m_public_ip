@@ -1,12 +1,11 @@
 #!/bin/bash
 
-TITLE="Public IP Adress"
+TITLE="m_public_ip - Public IP Adress"
 
 printf "Start gathering public IPv4 ...\n"
 $result = curl ifconfig.me 2>/dev/null | strings
 
-if [ -n $result]
-  then
+if [ -n $result];then
     echo "[OK] Your public IPv4 address is: $result"
 else 
     echo "[ERR] Error getting IPv4" 

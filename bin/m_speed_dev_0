@@ -1,4 +1,6 @@
 #!/bin/bash
 
+TITLE="m_speed_dev_0 - Short simple wget speedtest"
+
 echo "Starting 1GB Speedtes at $(date +%Y-%m-%d)"
 wget -O /dev/null http://download.thinkbroadband.com/1GB.zip

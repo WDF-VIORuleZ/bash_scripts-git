@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TITLE="m_ped_gen"
-if [ "$#" -ne 1 ]
- then
+TITLE="m_ped_gen - Generate random password (PRNG)"
+
+if [ "$#" -ne 1 ];then
     echo "Usage: m_pwd_gen [LEN]"
   else
     < /dev/urandom tr -dc A-Za-z0-9_ | head -c$1

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+
+TITLE="m_epub2pdf_dir - Convert all epubs in directory"
+
 RED='\033[0;31m'
 GRN='\033[0;32m'
 NOC='\033[0m'
