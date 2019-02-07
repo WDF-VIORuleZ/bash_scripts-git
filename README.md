@@ -4,19 +4,20 @@ Just some scripts for my daily use I backup on Github :)
 
 	[OK]   = usable
 	[WARN] = unrecommended to use 
-	[EXT]  = Scripts from extern sources
+	[EXT]  = Edited/wrapped/upgraded  Scripts from extern sources
 
 #### Table of contents
 
 * [install.sh] 
 * [WARN] m_chromium_tor
 * [OK] m_tor
-* [OK] [EXT](https://github.com/oblique/create_ap) m_custom_ap	
+* [OK] [EXT] (https://github.com/oblique/create_ap) m_custom_ap	
 * [OK] m_macchanger     
 * [OK] m_man2pdf	   
 * [OK] m_pwd_gen	   	
 * [OK] m_speed_dev_0    
 * [OK] m_syscall
+* [OK][EXT] (calibre) m_epub2pdf_dir
 
 #### Required Software Packages
 
@@ -26,10 +27,11 @@ Just some scripts for my daily use I backup on Github :)
 * create_ap
 * curl
 * tor
+* ebook-convert (package: calibre)
 
 ## Installation
 ---
 Arch
 ```
-sudo pacman -S xdg-utils macchanger create_ap curl tor
+sudo pacman -S curl tor xdg-utils macchanger create_ap calibre
 ```
