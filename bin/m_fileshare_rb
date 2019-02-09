@@ -10,6 +10,9 @@ TITLE="m_fileshare_rb - Simple Filesharing with ruby"
 # TODO: Auto-open in browser when flag is set
 # erno=$(whereis firefox | grep /)
 
+# ignoring loopback 127.0.0.1
+lan_ip=$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v "127.0.0.1")
+
 if [[ $UID != 0 ]] ; then
     printf "${RED}Please run this script as root\n"
     exit 1
@@ -17,12 +20,12 @@ if [[ $UID != 0 ]] ; then
         if [[ "$#" -eq 1 ]] ; then
             clear
             echo "1"
-            printf "${GRN}[+]${NOC} Starting Server ["$(pwd)/"${YLW}@127.0.0.1:"$1"${NOC}]"
+            printf "${GRN}[+]${NOC} Starting Server ["$(pwd)/"${YLW}@$lan_ip:"$1"${NOC}]"
             sudo ruby -run -ehttpd . -p$1
             
         elif [[ "$#" -eq 2 ]] ; then
             clear
-            printf "${GRN}[+]${NOC} Starting Server ["$1"/${YLW}@127.0.0.1:"$2"${NOC}]"
+            printf "${GRN}[+]${NOC} Starting Server ["$1"/${YLW}@$lan_ip:"$2"${NOC}]"
             sudo ruby -run -ehttpd $1 -p$2
         
         #elif [[ "$3" -eq 3 ]] && [[ $3 == "--open" ]] || [[ $3 == "-o" ]] ; then
