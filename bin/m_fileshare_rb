@@ -19,6 +19,10 @@ if [[ $UID != 0 ]] ; then
     else
         if [[ "$#" -eq 1 ]] ; then
             clear
+<<<<<<< HEAD
+=======
+            echo "1"
+>>>>>>> master
             printf "${GRN}[+]${NOC} Starting Server ["$(pwd)/"${YLW}@$lan_ip:"$1"${NOC}]"
             sudo ruby -run -ehttpd . -p$1
             
