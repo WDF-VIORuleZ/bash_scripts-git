@@ -20,6 +20,7 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_syscall
 * [OK] m_public_ip
 * [OK] m_fileshare_rb
+* [OK] m_tmp_ufw
 
 #### Required Software Packages
 
@@ -31,10 +32,16 @@ Just some scripts for my daily use I backup on Github :)
 * curl
 * tor
 * ebook-convert (package: calibre)
+* ufw
 
 ## Installation
 ---
 Arch
 ```
-sudo pacman -S curl ruby tor xdg-utils macchanger create_ap calibre
+sudo pacman -S curl ruby tor xdg-utils macchanger create_ap calibre ufw
+```
+
+Ubuntu
+```
+sudo apt-get install curl ruby tor xdg-utils macchanger create_ap calibre ufw
 ```
