@@ -6,23 +6,27 @@ NOC='\033[0m'
 RED='\033[0;31m'
 GRN='\033[0;32m'
 
-set -x
+# no ctrl-c when interrupting
+stty -echoctl
+
+#global params
+params=("$@")
 
 function enable()
 {
-    for i in $@;do
-        echo $i
-        ufw allow $i
-        printf "${GRN}[+]${NOC} Opened port %5s\n" "$i"
+    for i in "${params[@]}";do
+        ufw allow "$i" > /dev/null 2>&1
+        printf "${GRN}[+]${NOC} Opened port %5s\n" ""$i""
     done
 }
 
 function disable()
 {
-    for i in $@;do
-        ufw delete allow $i
-        printf "${RED}[-]${NOC} Closed port %5s\n" "$i"
+    for i in "${params[@]}";do
+        ufw delete allow "$i" > /dev/null 2>&1
+        printf "${RED}[-]${NOC} Closed port %5s\n" ""$i""
     done
+    exit 0
 }
 
 # main
@@ -34,8 +38,10 @@ else
         enable
         trap disable SIGINT
         trap disable SIGTERM
-
-        exit 0
+        
+        while true;do
+            sleep 1s
+        done
     else
         printf "${RED}No port specified. Abort"
         exit -1
