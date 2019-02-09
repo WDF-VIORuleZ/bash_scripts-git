@@ -2,10 +2,10 @@
 
 Just some scripts for my daily use I backup on Github :)
 
-	[OK]   = usable
-	[WARN] = unrecommended to use 
+	[OK]   = Working
 	[EXT]  = Edited/wrapped/upgraded scripts inspired from extern sources
-
+	[WARN] = Unrecommended to use / buggy
+	
 #### Table of contents
 
 * [install.sh] 
