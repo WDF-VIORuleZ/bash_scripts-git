@@ -1,0 +1,44 @@
+#!/bin/bash
+
+TITLE="$(basename $BASH_SOURCE) - Peek into my world lol"
+
+NOC='\033[0m'
+RED='\033[0;31m'
+GRN='\033[0;32m'
+
+set -x
+
+function enable()
+{
+    for i in $@;do
+        echo $i
+        ufw allow $i
+        printf "${GRN}[+]${NOC} Opened port %5s\n" "$i"
+    done
+}
+
+function disable()
+{
+    for i in $@;do
+        ufw delete allow $i
+        printf "${RED}[-]${NOC} Closed port %5s\n" "$i"
+    done
+}
+
+# main
+if [ $UID != 0 ];then
+    printf "${RED}Please run this script as root\n"
+    exit 1
+else
+    if [ $# -gt 0 ];then
+        enable
+        trap disable SIGINT
+        trap disable SIGTERM
+
+        exit 0
+    else
+        printf "${RED}No port specified. Abort"
+        exit -1
+    fi
+
+fi
