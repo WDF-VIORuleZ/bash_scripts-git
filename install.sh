@@ -40,8 +40,7 @@ main()
 
     echo "Your stdshell is : $SHELL"
     if [ ! detect_shell($sh) ]
-      printf "${ERR} I'm sorry, but your shell is currently not supported
-      for adding the script directory to your path."
+      printf "${ERR} Your shell is currently not supported for adding the script directory to your path.\n"
     fi
 
     echo "Cloning repository ..."std_path = "$HOME/.bin/"

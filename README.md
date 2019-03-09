@@ -8,8 +8,9 @@ Just some scripts for my daily use I backup on Github :)
 	
 #### Table of contents
 
-* [install.sh] 
+* install.sh 
 * [WARN] m_chromium_tor
+* [WARN] m_mon_scale
 * [OK] [EXT] (tor) m_tor
 * [OK] [EXT] (https://github.com/oblique/create_ap) m_custom_ap	
 * [OK] [EXT] (macchanger) m_macchanger     
@@ -33,9 +34,14 @@ Just some scripts for my daily use I backup on Github :)
 * tor
 * ebook-convert (package: calibre)
 * ufw
+* xorg-xrandr
 
 ## Installation
 ---
+Manual
+```
+cd /tmp/ && curl https://raw.githubusercontent.com/WDF-VIORuleZ/bash_scripts-git/master/install.sh >> install.sh && chmod +x install.sh && install.sh
+```
 Arch
 ```
 sudo pacman -S curl ruby tor xdg-utils macchanger create_ap calibre ufw
