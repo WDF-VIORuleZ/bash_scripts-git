@@ -10,7 +10,6 @@ Just some scripts for my daily use I backup on Github :)
 
 * install.sh 
 * [WARN] m_chromium_tor
-* [WARN] m_mon_scale
 * [OK] [EXT] (tor) m_tor
 * [OK] [EXT] (https://github.com/oblique/create_ap) m_custom_ap	
 * [OK] [EXT] (macchanger) m_macchanger     
@@ -22,6 +21,8 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_public_ip
 * [OK] m_fileshare_rb
 * [OK] m_tmp_ufw
+* [OK] m_mon_scale
+* [OK] m_zsh_fix
 
 #### Required Software Packages
 
