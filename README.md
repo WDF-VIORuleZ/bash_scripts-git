@@ -20,6 +20,7 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_syscall
 * [OK] m_public_ip
 * [OK] m_fileshare_rb
+* [WARN] m_file_share_rb_html
 * [OK] m_tmp_ufw
 * [OK] m_mon_scale
 * [OK] m_zsh_fix

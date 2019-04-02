@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TITLE="$(basename $BASH_SOURCE) - Peek into my world lol"
+TITLE="$(basename $BASH_SOURCE)"
 
 NOC='\033[0m'
 RED='\033[0;31m'
