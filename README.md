@@ -42,7 +42,7 @@ Just some scripts for my daily use I backup on Github :)
 ---
 Manual
 ```
-cd /tmp/ && curl https://raw.githubusercontent.com/WDF-VIORuleZ/bash_scripts-git/master/install.sh >> install.sh && chmod +x install.sh && install.sh
+cd /tmp/ && curl https://raw.githubusercontent.com/WDF-VIORuleZ/bash_scripts-git/master/install.sh >> install.sh && chmod +x ./install.sh && ./install.sh
 ```
 Arch
 ```

@@ -15,7 +15,7 @@ TITLE="Installing bash_scripts-git"
 function write_to_rc(shell)
 {
   shell_config = "~/."+$sh+"rc"
-  echo "# EXPORT VARIABLE BY " >> shell_config
+  echo "# EXPORT VARIABLE BY m_scripts \n" >> shell_config
   echo 'export APP=/"$std_path"' >> shell_config
 
   printf "${OK} Added export to $shell_config"
