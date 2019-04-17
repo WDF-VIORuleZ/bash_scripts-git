@@ -1,0 +1,21 @@
+#!/bin/bash
+
+NOC='\033[0m'
+RED='\033[0;31m'
+GRN='\033[0;32m'
+
+# no ctrl-c when interrupting
+stty -echoctl
+
+# working arch based only
+if [ $(pacman -Qq dmenu) == "dmenu" ];then
+    result=$(echo -e "yes\nno" | dmenu)
+    if [ $result == "yes" ];then
+        printf 
+    else
+        printf "${RED}[X]${NOC} Aborting programm ... \n"
+    fi
+else
+    printf "dmenu is not installed"
+    exit -1
+fi

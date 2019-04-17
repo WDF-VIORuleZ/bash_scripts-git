@@ -1,0 +1,8 @@
+#!/bin/sh
+
+# dialog script for verification purpouses
+# usage: m_dialog ["your phrase"] [program]
+
+
+# TODO: remove/fix length of params ( -eq 2 )
+[ $# -eq 2 ] && [ $(echo -e "No\nYes" | dmenu -i -p "$1") == "Yes" ] && $2 
