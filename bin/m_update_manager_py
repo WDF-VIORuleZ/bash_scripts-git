@@ -1,0 +1,24 @@
+#!/bin/python3
+
+import dmenu
+import subprocess
+
+options:dict = {'Refresh mirrorlist' : 'sudo pacman-mirrors --country Germany',
+                'Refresh & Upgrade' : 'sudo pacman -Syyuu',
+                'Update (-Suu)' : 'sudo pacman -Suu',
+                'Refresh (-Syy)': 'sudo pacman -Syy',
+                'Exit' : 'EXIT'}
+
+
+def main():
+    keys = [key for key in options]
+    #result = dmenu.show(keys, lines=len(keys))
+    result = dmenu.show(keys, case_insensitive=True, foreground='red', background='black')
+
+    if options[result] == 'EXIT':
+        exit(1)
+    
+    subprocess.run(options[result], shell=True)
+
+if __name__ == "__main__":
+    main()

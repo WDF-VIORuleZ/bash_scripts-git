@@ -1,0 +1,10 @@
+[Unit]
+Description=m_network_manager_autostartup
+
+[Service]
+Type=simple
+ExecStart=NetworkManager
+
+[Install]
+WantedBy=default.target
+

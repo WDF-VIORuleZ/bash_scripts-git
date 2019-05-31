@@ -11,7 +11,7 @@ stty -echoctl
 if [ $(pacman -Qq dmenu) == "dmenu" ];then
     result=$(echo -e "yes\nno" | dmenu)
     if [ $result == "yes" ];then
-        printf 
+        printf "$"
     else
         printf "${RED}[X]${NOC} Aborting programm ... \n"
     fi

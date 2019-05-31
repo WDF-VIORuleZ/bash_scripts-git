@@ -15,10 +15,10 @@ TITLE="Installing bash_scripts-git"
 function write_to_rc(shell)
 {
   shell_config = "~/."+$sh+"rc"
-  echo "# EXPORT VARIABLE BY " >> shell_config
+  echo "# EXPORT VARIABLE BY https://github.com/WDF-VIORuleZ/bash_scripts-git/" >> shell_config
   echo 'export APP=/"$std_path"' >> shell_config
 
-  printf "${OK} Added export to $shell_config"
+  printf "${OK} Added exports to $shell_config"
 }
 
 function detect_shell(shell)
@@ -48,7 +48,7 @@ main()
     git clone https://github.com/WDF-VIORuleZ/bash_scripts-git.git
 
     else
-      echo "[ERR] Directory $std_path already exists. Mission abort."
+      echo "${ERR} Directory $std_path already exists. Mission abort."
       exit
   fi
 }

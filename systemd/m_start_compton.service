@@ -1,0 +1,9 @@
+[Unit]
+Description=Selfmade onboot for compton (i3 not working)
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/
+
+[Install]
+WantedBy=default.target

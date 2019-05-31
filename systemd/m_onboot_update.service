@@ -5,7 +5,7 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/m_onreebot
+ExecStart=/usr/local/bin/$MY_SCRIPT$
 
 [Install]
 WantedBy=default.target

@@ -24,6 +24,7 @@ Just some scripts for my daily use I backup on Github :)
 * [OK] m_tmp_ufw
 * [OK] m_mon_scale
 * [OK] m_zsh_fix
+* [OK] m_dialog (works fine with i3(-gaps), openbox)
 
 #### Required Software Packages
 
@@ -37,6 +38,7 @@ Just some scripts for my daily use I backup on Github :)
 * ebook-convert (package: calibre)
 * ufw
 * xorg-xrandr
+* dmenu
 
 ## Installation
 ---
