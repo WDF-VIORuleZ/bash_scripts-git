@@ -1,0 +1,31 @@
+#!/bin/bash
+
+usage="[IDA_DBG] Not neough arguments: m_ida_dbg [w(indows)/l(inux)] [32/64]\n"
+
+if [[ $# -eq 2 ]] && [[ $2 == "32" || $2 == "64" ]];then
+    case $1 in
+      W|Windows|w|windows) 
+        if [ $2 == "32" ];then
+          wine "/home/mxhdrm/Documents/proc/IDA 7.0/dbgsrv/win32_remote.exe"
+        elif [ $2 == "64" ];then 
+          wine "/home/mxhdrm/Documents/proc/IDA 7.0/dbgsrv/win64_server64.exe"
+        fi
+      ;;
+
+      L|Linux|l|linux)
+        if [ $2 == "32" ];then
+          cd "/home/mxhdrm/Documents/proc/IDA 7.0/dbgsrv/" && ./linux_server
+        elif [ $2 == "64" ];then
+          cd "/home/mxhdrm/Documents/proc/IDA 7.0/dbgsrv/" && ./linux_server64
+        fi
+      ;;
+
+      *)
+        echo $usage 
+        exit -1
+        ;;
+    esac
+else
+    echo $usage
+    exit -1
+fi
