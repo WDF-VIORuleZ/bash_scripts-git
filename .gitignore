@@ -6,3 +6,5 @@ bin/test\.epub
 bin/0
 
 bin/=
+
+bin/geckodriver\.log

@@ -2,8 +2,13 @@
 clear
 stty -echoctl
 
-echo -e "\e[32m[OK]\e[0m   Starting TOR on 127.0.0.1:9050 ..."
-sudo -u tor /usr/bin/tor
-echo -e "\e[91m[WARN]\e[0m Stopped Tor"
-sleep 1s
-clear
+if [ $UID != 0 ];then
+    printf "${RED}Please run this script as root\n"
+    exit 1
+else
+    echo -e "\e[32m[OK]\e[0m   Starting TOR on 127.0.0.1:9050 ...\n"
+    sudo -u tor /usr/bin/tor
+    echo -e "\e[91m[WARN]\e[0m Stopped Tor\n"
+    sleep 1s
+    clear
+fi

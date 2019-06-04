@@ -1,0 +1,5 @@
+#!/bin/sh
+
+if [[ #$@ != 2 ]];then
+    wget --recursive --no-parent --user $1 --password $2 $3
+fi

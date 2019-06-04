@@ -24,6 +24,7 @@ if [ $total_files -gt 0 ];then
     done
 
     # Conversion
+    if [ $files -gt 0 ];then
     for file in "${files[@]}";do
         # replacing invalid chars with _
         mv $file $(echo $file | sed -e 's/[^A-Za-z0-9._-]/_/g')
@@ -32,6 +33,7 @@ if [ $total_files -gt 0 ];then
         ebook-convert "$file" "$of_file_name"
         printf "  ${GRN}[+]${NOC} $of_file_name\n"
     done
+    fi
 
 else 
     printf "  ${RED}[-]${NOC} Did not find a file to convert\n"
