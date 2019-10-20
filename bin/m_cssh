@@ -1,0 +1,36 @@
+#!/bin/bash
+
+args=("$@")
+path="$(realpath $1)"
+
+hashalg=(md5sum sha256sum sha1sum sha2sum) 
+origin=$(pwd)
+
+if [[ "$#" == 1 ]] ;then
+	dir=$(mktemp -d) 
+	cd $dir
+	echo -n $dir
+
+	if [[ -d "$path" ]];then
+		7z u $1.7z $path -mhe
+		file_hash=$(${hashalg[0]} $1.7z | awk '{print $1}')
+		7z u $1.7z -p$file_hash
+		mv $1.7z "$origin/$file_hash.7z"
+
+
+	elif [[ -f "$path" ]];then
+		7z a $1.7z $path -mhe  
+		file_hash=$(${hashalg[0]} $1.7z | awk '{print $1}')
+		7z u $1.7z -p$file_hash
+		mv $1.7z "$origin/$file_hash.7z"
+
+	else
+		printf "File / Folder does not exist!\n"
+		exit -1
+	fi
+
+	rm -rf $dir
+else 
+	printf "No arguments provided. Exit"
+	exit -1
+fi

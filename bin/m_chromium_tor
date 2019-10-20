@@ -1,5 +1,0 @@
-#!/bin/bash
-
-# TODO start tor service directly or via chroot
-echo "Starting chromium hosted through tor..."
-chromium --proxy-server="socks5://myproxy:8080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE myproxy"
