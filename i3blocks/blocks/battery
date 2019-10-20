@@ -1,0 +1,11 @@
+#!/bin/bash
+
+state=$(acpi | awk '{print $4}' | tr -d ',')
+
+if [ state != "" ];then
+	echo $state	#full text
+	echo $state	#short text
+else
+	echo "NO_BAT"	#full text
+	echo "NO_BAT"	#short text
+fi

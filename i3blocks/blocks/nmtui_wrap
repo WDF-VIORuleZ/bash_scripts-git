@@ -1,0 +1,6 @@
+#!/bin/bash
+
+#only works for termite
+case "$BLOCK_BUTTON" in
+	1) termite -e nmtui
+esac

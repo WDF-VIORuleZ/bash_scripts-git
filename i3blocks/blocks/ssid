@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# simple script for ssid identifictaion for i3blocks
+ssid=$(iwconfig wlp3s0 | grep ESSID | awk '{print $4}' | tr -d 'ESSID: ')
+ip=$(ip -4 addr | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | grep -v "127.0.0.1")
+
+if [ ssid != "" ];then
+	echo "$ip @ $ssid"	#short text
+else
+	echo "OFFLINE"		#short text
+fi
