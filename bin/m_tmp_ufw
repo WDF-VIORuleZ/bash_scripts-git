@@ -31,7 +31,7 @@ function disable()
 
 # main
 if [ $UID != 0 ];then
-    printf "${RED}Please run this script as root\n"
+    printf "${RED}Script requires root priv\n"
     exit 1
 else
     if [ $# -gt 0 ];then
